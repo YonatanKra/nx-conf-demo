@@ -1,0 +1,38 @@
+{
+  "npmScope": "yonatan",
+  "affected": {
+    "defaultBase": "master"
+  },
+  "implicitDependencies": {
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    ".eslintrc.json": "*"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/workspace/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
+      }
+    }
+  },
+  "targetDependencies": {
+    "build": [
+      {
+        "target": "build",
+        "projects": "dependencies"
+      }
+    ]
+  },
+  "projects": {
+    "nx-conf-demo": {
+      "tags": []
+    },
+    "nx-conf-demo-e2e": {
+      "tags": [],
+      "implicitDependencies": ["nx-conf-demo"]
+    }
+  }
+}
