@@ -1,5 +1,8 @@
-import './app.element.scss';
+import styles from './app.element.scss';
 import template from '!!raw-loader!./app.element.html';
+
+const stylesElement = document.createElement('style');
+stylesElement.innerHTML = styles;
 
 export class AppElement extends HTMLElement {
   public static observedAttributes = [];
@@ -8,6 +11,7 @@ export class AppElement extends HTMLElement {
     const title = 'nx-conf-demo';
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.innerHTML = template.replace('${title}', title);
+    this.shadowRoot.append(stylesElement);
   }
 }
 
