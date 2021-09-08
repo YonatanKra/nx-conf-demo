@@ -20,7 +20,8 @@
               "apps/nx-conf-demo/src/assets"
             ],
             "styles": ["apps/nx-conf-demo/src/styles.scss"],
-            "scripts": []
+            "scripts": [],
+            "webpackConfig": "apps/nx-conf-demo/webpack.config.js"
           },
           "configurations": {
             "production": {
@@ -50,6 +51,7 @@
         "serve": {
           "executor": "@nrwl/web:dev-server",
           "options": {
+            "webpackConfig": "apps/nx-conf-demo/webpack.config.js",
             "buildTarget": "nx-conf-demo:build"
           },
           "configurations": {
