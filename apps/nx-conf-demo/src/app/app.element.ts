@@ -6,7 +6,8 @@ export class AppElement extends HTMLElement {
 
   connectedCallback() {
     const title = 'nx-conf-demo';
-    this.innerHTML = template.replace('${title}', title);
+    this.attachShadow({ mode: 'open' });
+    this.shadowRoot.innerHTML = template.replace('${title}', title);
   }
 }
 
