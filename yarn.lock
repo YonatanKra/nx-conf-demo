@@ -8183,6 +8183,11 @@ native-url@^0.2.6:
   dependencies:
     querystring "^0.2.0"
 
+nativescript-loading-screen@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/nativescript-loading-screen/-/nativescript-loading-screen-1.0.6.tgz#d4992832caf5600feae2e4577ae798f017798e67"
+  integrity sha512-m+9vJUElz/jwbJodQjaKHZ/9Ka+ngJE3wJqOStDoiwLh1wp7ELHqhIMhtS+mqvIaTMzSsAl57Jf75e5ypV6GFg==
+
 nativescript-theme-core@~1.0.4:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/nativescript-theme-core/-/nativescript-theme-core-1.0.6.tgz#cea174696bc5b3bd2025412c9c2eb4a5ed2b7f2d"
