@@ -8,7 +8,9 @@
       "targets": {
         "build": {
           "executor": "@nrwl/web:build",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/apps/nx-conf-demo",
             "index": "apps/nx-conf-demo/src/index.html",
@@ -19,7 +21,9 @@
               "apps/nx-conf-demo/src/favicon.ico",
               "apps/nx-conf-demo/src/assets"
             ],
-            "styles": ["apps/nx-conf-demo/src/styles.scss"],
+            "styles": [
+              "apps/nx-conf-demo/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -60,14 +64,20 @@
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "outputs": ["{options.outputFile}"],
+          "outputs": [
+            "{options.outputFile}"
+          ],
           "options": {
-            "lintFilePatterns": ["apps/nx-conf-demo/**/*.ts"]
+            "lintFilePatterns": [
+              "apps/nx-conf-demo/**/*.ts"
+            ]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/nx-conf-demo"],
+          "outputs": [
+            "coverage/apps/nx-conf-demo"
+          ],
           "options": {
             "jestConfig": "apps/nx-conf-demo/jest.config.js",
             "passWithNoTests": true
@@ -95,9 +105,93 @@
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "outputs": ["{options.outputFile}"],
+          "outputs": [
+            "{options.outputFile}"
+          ],
           "options": {
-            "lintFilePatterns": ["apps/nx-conf-demo-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/nx-conf-demo-e2e/**/*.{js,ts}"
+            ]
+          }
+        }
+      }
+    },
+    "nativescript-dragons-and-coin": {
+      "projectType": "application",
+      "root": "apps/nativescript-dragons-and-coin/",
+      "sourceRoot": "apps/nativescript-dragons-and-coin/src",
+      "prefix": "",
+      "targets": {
+        "build": {
+          "executor": "@nativescript/nx:build",
+          "options": {
+            "noHmr": true,
+            "production": true,
+            "uglify": true,
+            "release": true,
+            "forDevice": true
+          },
+          "configurations": {
+            "prod": {
+              "fileReplacements": [
+                {
+                  "replace": "./src/environments/environment.ts",
+                  "with": "./src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "ios": {
+          "executor": "@nativescript/nx:build",
+          "options": {
+            "platform": "ios"
+          },
+          "configurations": {
+            "build": {
+              "copyTo": "./dist/build.ipa"
+            },
+            "prod": {
+              "combineWithConfig": "build:prod"
+            }
+          }
+        },
+        "android": {
+          "executor": "@nativescript/nx:build",
+          "options": {
+            "platform": "android"
+          },
+          "configurations": {
+            "build": {
+              "copyTo": "./dist/build.apk"
+            },
+            "prod": {
+              "combineWithConfig": "build:prod"
+            }
+          }
+        },
+        "clean": {
+          "executor": "@nativescript/nx:build",
+          "options": {
+            "clean": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/nativescript-dragons-and-coin/**/*.ts",
+              "apps/nativescript-dragons-and-coin/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/nativescript-dragons-and-coin/jest.config.js",
+            "tsConfig": "apps/nativescript-dragons-and-coin/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "apps/nativescript-dragons-and-coin/src/test-setup.ts"
           }
         }
       }
