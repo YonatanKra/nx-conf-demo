@@ -1,2 +1,10 @@
-<Label text="Actions Works!" textWrap="true"></Label>
+<Label text="What is your response?"
+       class="h1 text-center c-white"
+       textWrap="true"></Label>
 
+<FlexboxLayout justifyContent="space-around">
+  <Button class="btn outline"
+          *ngFor="let action of actions"
+          [text]="action.displayName"
+          (tap)="emitAction(action.name)"></Button>
+</FlexboxLayout>

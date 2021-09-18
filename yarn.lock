@@ -1408,6 +1408,11 @@
     ignore "^5.0.4"
     jsonc-parser "3.0.0"
 
+"@nativescript/theme@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@nativescript/theme/-/theme-3.0.1.tgz#fabc676638c22a63932e300ba23acc51f228e9ad"
+  integrity sha512-5rduFdEjjGyUgK+jaJ/2EHxi+qAgTZuK9XgfxHw0KJAIIWP9HNL8JV8IVUBeIodRPHhSJZJVQT7t+8peH/4dVQ==
+
 "@nativescript/types-android@8.0.1":
   version "8.0.1"
   resolved "https://registry.yarnpkg.com/@nativescript/types-android/-/types-android-8.0.1.tgz#ab2fd0e36846b6812fcf5a41cfef2a6700ebf579"

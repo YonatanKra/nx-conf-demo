@@ -1,6 +1,7 @@
+import { EventEmitter, Input, Output } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
+import { GameCardAction } from '../../models/action.model';
 
-// TODO::repeat actions sent from the card and add relevant buttons + emit an event with the action's name
 @Component({
   selector: 'CardActions',
   templateUrl: './actions.component.html',
@@ -8,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActionsComponent implements OnInit {
 
+  @Input()
+  actions: GameCardAction[] = [];
+
+  @Output() actionSelected: EventEmitter<string> = new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  emitAction(actionName: string) {
+    this.actionSelected.emit(actionName);
   }
 
 }
