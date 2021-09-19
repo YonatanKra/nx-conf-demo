@@ -9,7 +9,7 @@ export interface Card {
   pointsValue: number;
 }
 
-export interface Monster extends Card {
+export interface MonsterCard extends Card {
   power: number;
   mind: number;
   agility: number;

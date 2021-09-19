@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { gameState } from '../../store/state';
 import { GameState } from '../../models/state.model';
+import { getPlayCards } from '../../content';
 
 @Component({
   selector: 'GameBoard',
@@ -8,7 +9,7 @@ import { GameState } from '../../models/state.model';
   styleUrls: ['./game-board.component.css']
 })
 export class GameBoardComponent implements OnInit{
-
+  playCards = getPlayCards(); //TODO::move to the game's state
   gameState: GameState = gameState;
   get hitPoints() {
     return 'Hit Points: ' + this.gameState.character.hitPoints
@@ -24,10 +25,12 @@ export class GameBoardComponent implements OnInit{
 
   ngOnInit(): void {
     gameState.actionFinished.subscribe((actionName: string) => {
-      console.log(`${actionName} has Finished!`)
-      console.log(`Character: ${JSON.stringify(this.gameState.character)}`);
+      if (actionName === 'NEXT_CARD') return;
+      gameState.commitAction('NEXT_CARD', this.playCards.pop());
+      // TODO::handle hitpoints zero
+      // TODO::handle unfinished fight
+      // TODO::handle end of cards deck
+      // TODO::handle run
     });
   }
-
-
 }

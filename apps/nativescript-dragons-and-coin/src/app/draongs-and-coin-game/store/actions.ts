@@ -1,11 +1,11 @@
-import { Monster } from '../models/card.model';
+import { Card, MonsterCard } from '../models/card.model';
 import { GameState } from '../models/state.model';
 
 function getDiceResult() {
   return Math.floor(Math.random() * 5 + 1);
 }
 
-export function FIGHT(gameState: GameState, monster: Monster = gameState.currentCard as Monster) {
+export function FIGHT(gameState: GameState, monster: MonsterCard = gameState.currentCard as MonsterCard) {
   const userPower = gameState.character.power + getDiceResult();
   const monsterPower = monster.power + getDiceResult();
   console.log(`${userPower} || ${monsterPower}`);
@@ -23,6 +23,11 @@ export function FIGHT(gameState: GameState, monster: Monster = gameState.current
   }
 }
 
-export function RUN(monster: Monster) {
+export function RUN(monster: MonsterCard) {
 
+}
+
+export function NEXT_CARD(gameState: GameState, nextCard: Card | MonsterCard) {
+  const newCard = Object.assign({}, nextCard);
+  gameState.currentCard = newCard;
 }
