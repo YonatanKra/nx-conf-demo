@@ -5,7 +5,7 @@ function getDiceResult() {
   return Math.floor(Math.random() * 5 + 1);
 }
 
-export function FIGHT(gameState: GameState, monster: MonsterCard = gameState.currentCard as MonsterCard) {
+export function FIGHT(gameState: GameState, monster: MonsterCard = gameState.currentCard?.card as MonsterCard) {
   const userPower = gameState.character.power + getDiceResult();
   const monsterPower = monster.power + getDiceResult();
   console.log(`${userPower} || ${monsterPower}`);
@@ -17,6 +17,8 @@ export function FIGHT(gameState: GameState, monster: MonsterCard = gameState.cur
   }
   if (userPower > monsterPower) {
     const newCharacterState = {...gameState.character};
+    const newCurrentCardState = {...gameState.currentCard};
+    newCurrentCardState.cardState = "INACTIVE";
     newCharacterState.experiencePoints += monster.pointsValue;
     gameState.character = newCharacterState;
     console.log('Won!');
@@ -24,10 +26,16 @@ export function FIGHT(gameState: GameState, monster: MonsterCard = gameState.cur
 }
 
 export function RUN(monster: MonsterCard) {
-
+  console.log('Run');
 }
 
 export function NEXT_CARD(gameState: GameState, nextCard: Card | MonsterCard) {
   const newCard = Object.assign({}, nextCard);
-  gameState.currentCard = newCard;
+  gameState.currentCard = {card: newCard, cardState: 'ACTIVE'};
+  return gameState;
+}
+
+export function SET_NEW_DECK(gameState: GameState, { deck }) {
+  gameState.deck = deck;
+  return gameState;
 }

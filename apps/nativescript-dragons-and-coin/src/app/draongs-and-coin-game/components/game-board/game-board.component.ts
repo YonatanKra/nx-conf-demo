@@ -9,7 +9,7 @@ import { getPlayCards } from '../../content';
   styleUrls: ['./game-board.component.css']
 })
 export class GameBoardComponent implements OnInit{
-  playCards = getPlayCards(); //TODO::move to the game's state
+  playCards = getPlayCards();
   gameState: GameState = gameState;
   get hitPoints() {
     return 'Hit Points: ' + this.gameState.character.hitPoints
@@ -24,11 +24,11 @@ export class GameBoardComponent implements OnInit{
   }
 
   ngOnInit(): void {
+    gameState.commitAction('SET_NEW_DECK', {deck: this.playCards});
     gameState.actionFinished.subscribe((actionName: string) => {
-      if (actionName === 'NEXT_CARD') return;
+      if (actionName === 'NEXT_CARD' || this.gameState.currentCard.cardState === "ACTIVE") return;
       gameState.commitAction('NEXT_CARD', this.playCards.pop());
       // TODO::handle hitpoints zero
-      // TODO::handle unfinished fight
       // TODO::handle end of cards deck
       // TODO::handle run
     });

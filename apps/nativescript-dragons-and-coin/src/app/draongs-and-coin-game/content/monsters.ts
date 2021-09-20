@@ -51,8 +51,44 @@ const GIANT_RAT: MonsterCard = {
   image: '~/assets/images/monsters/giant-rat.png',
 };
 
+const OGRE: MonsterCard = {
+  name: "Ogre",
+  description: "A big ogre attacks you with a cudgel",
+  power: 7,
+  agility: 10,
+  mind: 5,
+  pointsValue: 30,
+  abundance: 5,
+  image: '~/assets/images/monsters/Ogre.png',
+};
+
+const WOLF: MonsterCard = {
+  name: "Wolf",
+  description: "A wolf emerges from the darkness and leaps at you",
+  power: 3,
+  agility: 12,
+  mind: 7,
+  pointsValue: 15,
+  abundance: 50,
+  image: '~/assets/images/monsters/wolf.png',
+};
+
+const GIANT_CROW: MonsterCard = {
+  name: "Giant Crow",
+  description: "A wolf emerges from the darkness and leaps at you",
+  power: 3,
+  agility: 12,
+  mind: 7,
+  pointsValue: 30,
+  abundance: 50,
+  image: '~/assets/images/monsters/giant-crow.png',
+};
+
 export const MONSTERS = [
   new Monster(GOBLIN),
   new Monster(DRAGON),
   new Monster(GIANT_RAT),
+  new Monster(OGRE),
+  new Monster(WOLF),
+  new Monster(GIANT_CROW),
 ];
