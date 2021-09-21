@@ -1,14 +1,11 @@
 <FlexboxLayout class="main-wrapper"
-               justifyContent="center"
-               alignItems="flex-start"
+               flexDirection='column'
                flexWrap="wrap"
                height="100%"
                *ngIf="!endGame">
-  <GameCard flexGrow='4'
-            [cardData]="gameState.currentCard?.card"></GameCard>
+  <GameCard [cardData]="gameState.currentCard?.card"></GameCard>
 
-  <FlexboxLayout width='25%'
-                 flexDirection="column">
+  <FlexboxLayout width='100%' justifyContent='space-around'>
     <Label [text]="hitPoints" class="h3 text-center c-white"></Label>
     <Label [text]="power" class="h3 text-center c-white"></Label>
     <Label [text]="points" class="h3 text-center c-white"></Label>

@@ -1,9 +1,8 @@
 
-
-<FlexboxLayout justifyContent="space-around" flexDirection='column'>
-  <Label text="What is your response?"
-         class="h3 text-center c-white"
-         textWrap="true"></Label>
+<Label text="What is your response?"
+       class="h2 text-center c-white"
+       textWrap="true"></Label>
+<FlexboxLayout justifyContent="space-around">
   <Button class="btn outline"
           *ngFor="let action of actions"
           [text]="action.displayName"

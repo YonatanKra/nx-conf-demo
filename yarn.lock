@@ -1786,6 +1786,11 @@
     yargs "15.4.1"
     yargs-parser "20.0.0"
 
+"@nstudio/nativescript-cardview@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@nstudio/nativescript-cardview/-/nativescript-cardview-2.0.1.tgz#9d40d3173efb2cb6d58d06a940a77d4ef7a4c1f6"
+  integrity sha512-c9FUYlvsUt6Z9xz8ESGTAjmHdNDO+RQp4KWSbu46fnXUuuSTJvjTdR6uOaIQmxQw8vb0HrHEri5p0bIK1nBxFQ==
+
 "@pmmmwh/react-refresh-webpack-plugin@^0.4.0":
   version "0.4.3"
   resolved "https://registry.yarnpkg.com/@pmmmwh/react-refresh-webpack-plugin/-/react-refresh-webpack-plugin-0.4.3.tgz#1eec460596d200c0236bf195b078a5d1df89b766"

@@ -2,6 +2,10 @@ import { EventEmitter, Input, Output } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { Card } from '../../models/card.model';
 import { gameState } from '../../store/state';
+import { registerElement } from '@nativescript/angular';
+import { CardView } from '@nstudio/nativescript-cardview';
+
+registerElement('CardView', () => CardView as any);
 
 @Component({
   selector: 'GameCard',
