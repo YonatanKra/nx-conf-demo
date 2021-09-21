@@ -3,6 +3,10 @@ import { gameState } from '../../store/state';
 import { GameState } from '../../models/state.model';
 import { getPlayCards } from '../../content';
 
+function isCardActive(currentCard) {
+  return currentCard && currentCard.cardState === "ACTIVE";
+}
+
 @Component({
   selector: 'GameBoard',
   templateUrl: './game-board.component.html',
@@ -26,7 +30,7 @@ export class GameBoardComponent implements OnInit{
   ngOnInit(): void {
     gameState.commitAction('SET_NEW_DECK', {deck: this.playCards});
     gameState.actionFinished.subscribe((actionName: string) => {
-      if (actionName === 'NEXT_CARD' || this.gameState.currentCard.cardState === "ACTIVE") return;
+      if (actionName === 'NEXT_CARD' || isCardActive(this.gameState.currentCard)) return;
       gameState.commitAction('NEXT_CARD', this.playCards.pop());
       // TODO::handle hitpoints zero
       // TODO::handle end of cards deck
