@@ -14,6 +14,11 @@ function isCardActive(currentCard) {
 })
 export class GameBoardComponent implements OnInit{
   gameState: GameState = gameState;
+
+  get endGame(): boolean {
+    return this.gameState.character.hitPoints <= 0;
+  }
+
   get hitPoints() {
     return 'Hit Points: ' + this.gameState.character.hitPoints
   }

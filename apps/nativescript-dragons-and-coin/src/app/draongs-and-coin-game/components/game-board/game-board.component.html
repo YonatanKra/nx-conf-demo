@@ -1,4 +1,4 @@
-<FlexboxLayout class="main-wrapper" justifyContent='center' flexWrap='wrap' height='100%'>
+<FlexboxLayout class="main-wrapper" justifyContent='center' flexWrap='wrap' height='100%' *ngIf='!endGame'>
   <GameCard flexGrow="2"
             [cardData]='gameState.currentCard?.card'></GameCard>
 
@@ -9,3 +9,7 @@
     <Label [text]="points" class="h1 text-center c-white"></Label>
   </FlexboxLayout>
 </FlexboxLayout>
+
+<AbsoluteLayout *ngIf='endGame'>
+  <Image width="100%" src='~/assets/images/gameOver.jpeg'></Image>
+</AbsoluteLayout>

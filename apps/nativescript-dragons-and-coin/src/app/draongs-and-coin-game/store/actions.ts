@@ -21,6 +21,7 @@ export function FIGHT(gameState: GameState, monster: MonsterCard = gameState.cur
     newCurrentCardState.cardState = "INACTIVE";
     newCharacterState.experiencePoints += monster.pointsValue;
     gameState.character = newCharacterState;
+    gameState.currentCard = newCurrentCardState;
     console.log('Won!');
   }
 }
@@ -40,5 +41,5 @@ export function SET_NEW_DECK(gameState: GameState, { deck }) {
 }
 
 export function END_GAME(gameState: GameState) {
-  console.log('TODO::Character is dead');
+  console.log('Character is dead');
 }
