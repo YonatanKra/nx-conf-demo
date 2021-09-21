@@ -19,4 +19,4 @@ import {ActionsComponent} from './components/actions/actions.component'
   ],
   schemas: [NO_ERRORS_SCHEMA]
 })
-export class DraongsAndCoinGameModule { }
+export class DragonsAndCoinGameModule { }
