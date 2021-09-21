@@ -5,7 +5,7 @@ import { GameCardAction } from '../../models/action.model';
 @Component({
   selector: 'CardActions',
   templateUrl: './actions.component.html',
-  styleUrls: ['./actions.component.css']
+  styleUrls: ['./actions.component.scss']
 })
 export class ActionsComponent implements OnInit {
 

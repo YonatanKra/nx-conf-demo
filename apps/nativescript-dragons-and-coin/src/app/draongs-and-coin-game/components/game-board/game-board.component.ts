@@ -10,7 +10,7 @@ function isCardActive(currentCard) {
 @Component({
   selector: 'GameBoard',
   templateUrl: './game-board.component.html',
-  styleUrls: ['./game-board.component.css']
+  styleUrls: ['./game-board.component.scss']
 })
 export class GameBoardComponent implements OnInit{
   gameState: GameState = gameState;

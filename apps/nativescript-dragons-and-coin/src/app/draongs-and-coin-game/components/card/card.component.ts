@@ -6,7 +6,7 @@ import { gameState } from '../../store/state';
 @Component({
   selector: 'GameCard',
   templateUrl: './card.component.html',
-  styleUrls: ['./card.component.css']
+  styleUrls: ['./card.component.scss']
 })
 export class CardComponent {
   @Output()
