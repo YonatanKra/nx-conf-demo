@@ -26,8 +26,17 @@ export function FIGHT(gameState: GameState, monster: MonsterCard = gameState.cur
   }
 }
 
-export function RUN(monster: MonsterCard) {
-  console.log('TODO::Run');
+export function RUN(gameState: GameState, monster: MonsterCard = gameState.currentCard?.card as MonsterCard) {
+  const userAgility = gameState.character.agility + getDiceResult();
+  const monsterAgility = monster.agility + getDiceResult();
+
+  if (userAgility >= monsterAgility) {
+    const newCurrentCardState = {...gameState.currentCard};
+    newCurrentCardState.cardState = "INACTIVE";
+    gameState.currentCard = newCurrentCardState;
+    return console.log("Managed to run away!");
+  }
+  console.log("Failed to run away - must fight!");
 }
 
 export function NEXT_CARD(gameState: GameState) {

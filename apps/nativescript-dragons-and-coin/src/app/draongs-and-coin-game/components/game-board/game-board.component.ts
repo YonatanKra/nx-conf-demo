@@ -42,11 +42,18 @@ export class GameBoardComponent implements OnInit{
     // Handle cards swap
     gameState.actionFinished.subscribe((actionName: string) => {
       if (actionName === 'NEXT_CARD' || isCardActive(this.gameState.currentCard)) return;
+
       if (this.gameState.deck.length === 0) {
         this.refillDeck();
       }
       gameState.commitAction('NEXT_CARD');
-      // TODO::handle run
+    });
+
+    // Handle RUN
+    gameState.actionFinished.subscribe((actionName: string) => {
+      if (actionName === 'RUN' && isCardActive(this.gameState.currentCard)) {
+        gameState.commitAction('FIGHT');
+      }
     });
 
     // handle hitpoints zero
