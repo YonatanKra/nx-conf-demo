@@ -26,16 +26,19 @@ export function FIGHT(gameState: GameState, monster: MonsterCard = gameState.cur
 }
 
 export function RUN(monster: MonsterCard) {
-  console.log('Run');
+  console.log('TODO::Run');
 }
 
-export function NEXT_CARD(gameState: GameState, nextCard: Card | MonsterCard) {
-  const newCard = Object.assign({}, nextCard);
-  gameState.currentCard = {card: newCard, cardState: 'ACTIVE'};
+export function NEXT_CARD(gameState: GameState) {
+  gameState.currentCard = {card: gameState.deck.pop(), cardState: 'ACTIVE'};
   return gameState;
 }
 
 export function SET_NEW_DECK(gameState: GameState, { deck }) {
   gameState.deck = deck;
   return gameState;
+}
+
+export function END_GAME(gameState: GameState) {
+  console.log('TODO::Character is dead');
 }

@@ -16,7 +16,7 @@ export const Cards: (Card | MonsterCard)[] = [
   ...MONSTERS
 ];
 
-export function getPlayCards() {
+export function generatePlayCards() {
   return shuffleCards(Cards.flatMap((card) => {
     return new Array(card.abundance).fill(1).map(() => {
       return Object.assign({}, card);

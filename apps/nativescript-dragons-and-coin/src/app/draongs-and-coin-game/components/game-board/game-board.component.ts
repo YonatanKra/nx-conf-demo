@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { gameState } from '../../store/state';
 import { GameState } from '../../models/state.model';
-import { getPlayCards } from '../../content';
+import { generatePlayCards } from '../../content';
 
 function isCardActive(currentCard) {
   return currentCard && currentCard.cardState === "ACTIVE";
@@ -13,7 +13,6 @@ function isCardActive(currentCard) {
   styleUrls: ['./game-board.component.css']
 })
 export class GameBoardComponent implements OnInit{
-  playCards = getPlayCards();
   gameState: GameState = gameState;
   get hitPoints() {
     return 'Hit Points: ' + this.gameState.character.hitPoints
@@ -27,14 +26,29 @@ export class GameBoardComponent implements OnInit{
     return 'Points: ' + this.gameState.character.experiencePoints;
   }
 
+  refillDeck() {
+    gameState.commitAction('SET_NEW_DECK', {deck: generatePlayCards()});
+  }
+
   ngOnInit(): void {
-    gameState.commitAction('SET_NEW_DECK', {deck: this.playCards});
+    this.refillDeck();
+    gameState.commitAction('NEXT_CARD');
+
+    // Handle cards swap
     gameState.actionFinished.subscribe((actionName: string) => {
       if (actionName === 'NEXT_CARD' || isCardActive(this.gameState.currentCard)) return;
-      gameState.commitAction('NEXT_CARD', this.playCards.pop());
-      // TODO::handle hitpoints zero
-      // TODO::handle end of cards deck
+      if (this.gameState.deck.length === 0) {
+        this.refillDeck();
+      }
+      gameState.commitAction('NEXT_CARD');
       // TODO::handle run
+    });
+
+    // handle hitpoints zero
+    gameState.actionFinished.subscribe((actionName: string) => {
+      if (actionName !== 'END_GAME' && gameState.character.hitPoints === 0) {
+        gameState.commitAction('END_GAME');
+      }
     });
   }
 }
