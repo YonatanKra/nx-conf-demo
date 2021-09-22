@@ -36,22 +36,29 @@ export class GameBoardComponent implements OnInit{
   }
 
   refillDeck() {
-    gameState.commitAction('SET_NEW_DECK', {deck: generatePlayCards()});
+    this.gameState.commitAction('SET_NEW_DECK', {deck: generatePlayCards()});
   }
 
+  restart() {
+    this.gameState.commitAction('SET_NEW_DECK', {deck: generatePlayCards()});
+    this.gameState.commitAction('RESTART');
+    this.gameState.commitAction('NEXT_CARD');
+  }
   async ngOnInit(): Promise<void> {
     await this.audioService.play('~/assets/audio/battle-of-the-dragons-8037.mp3');
     this.refillDeck();
-    gameState.commitAction('NEXT_CARD');
+    this.gameState.commitAction('NEXT_CARD');
 
     // Handle cards swap
     gameState.actionFinished.subscribe((actionName: string) => {
-      if (actionName === 'NEXT_CARD' || isCardActive(this.gameState.currentCard)) return;
+      if (actionName === 'NEXT_CARD' ||
+        actionName === 'RESTART' ||
+        isCardActive(this.gameState.currentCard)) return;
 
-      if (this.gameState.deck.length === 0) {
+      if (this.gameState.deck?.length === 0) {
         this.refillDeck();
       }
-      gameState.commitAction('NEXT_CARD');
+      this.gameState.commitAction('NEXT_CARD');
     });
 
     // Handle RUN

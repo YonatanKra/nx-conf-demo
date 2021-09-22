@@ -1,5 +1,6 @@
 import { Card, MonsterCard } from '../models/card.model';
 import { GameState } from '../models/state.model';
+import { Character } from '../models/character.model';
 
 function getDiceResult() {
   return Math.floor(Math.random() * 5 + 1);
@@ -51,4 +52,16 @@ export function SET_NEW_DECK(gameState: GameState, { deck }) {
 
 export function END_GAME(gameState: GameState) {
   console.log('Character is dead');
+}
+
+export function RESTART(gameState: GameState) {
+  const restartedData = {
+    character: {
+      hitPoints: 6, mind: 2, power: 4, agility: 3, experiencePoints: 0
+    },
+    currentCard: undefined
+  };
+  
+  Object.assign(gameState, restartedData);
+  return gameState;
 }

@@ -8,7 +8,7 @@ class Game implements GameState {
     hitPoints: 6, mind: 2, power: 4, agility: 3, experiencePoints: 0
   };
   currentCard: undefined;
-  commitAction(actionName: string, payload?: any) {
+  commitAction(actionName: string, payload?: any): void {
     Actions[actionName](this, payload);
     this.actionFinished.emit(actionName);
   }

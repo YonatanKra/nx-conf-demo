@@ -12,6 +12,9 @@
   </FlexboxLayout>
 </FlexboxLayout>
 
-<AbsoluteLayout *ngIf="endGame">
-  <Image width="100%" src="~/assets/images/gameOver.jpeg"></Image>
-</AbsoluteLayout>
+<StackLayout *ngIf="endGame">
+
+    <Button (tap)='restart()' text='Restart The Game'></Button>
+    <Image width="100%" src="~/assets/images/gameOver.jpeg"></Image>
+
+</StackLayout>
