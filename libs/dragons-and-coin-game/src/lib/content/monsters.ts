@@ -75,7 +75,7 @@ const WOLF: MonsterCard = {
 
 const GIANT_CROW: MonsterCard = {
   name: "Giant Crow",
-  description: "A wolf emerges from the darkness and leaps at you",
+  description: "A giant crow tries to pick at you.",
   power: 3,
   agility: 12,
   mind: 7,

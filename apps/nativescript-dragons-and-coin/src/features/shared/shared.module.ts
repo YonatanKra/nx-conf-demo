@@ -1,5 +1,6 @@
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { NativeScriptCommonModule, NativeScriptFormsModule, NativeScriptRouterModule } from '@nativescript/angular';
+import { FullScreenService } from './services/full-screen.service';
 
 const MODULES = [
   NativeScriptCommonModule,
@@ -10,6 +11,7 @@ const MODULES = [
 @NgModule({
   imports: [...MODULES],
   exports: [...MODULES],
-  schemas: [NO_ERRORS_SCHEMA]
+  schemas: [NO_ERRORS_SCHEMA],
+  providers: [FullScreenService]
 })
 export class SharedModule {}

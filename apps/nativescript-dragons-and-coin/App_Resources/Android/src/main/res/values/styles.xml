@@ -3,7 +3,7 @@
 
     <!-- theme to use FOR launch screen-->
     <style name="LaunchScreenThemeBase" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="toolbarStyle">@style/NativeScriptToolbarStyle</item>
+
 
         <item name="colorPrimary">@color/ns_primary</item>
         <item name="colorPrimaryDark">@color/ns_primaryDark</item>
@@ -20,8 +20,6 @@
 
     <!-- theme to use AFTER launch screen is loaded-->
     <style name="AppThemeBase" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="toolbarStyle">@style/NativeScriptToolbarStyle</item>
-
         <item name="colorPrimary">@color/ns_primary</item>
         <item name="colorPrimaryDark">@color/ns_primaryDark</item>
         <item name="colorAccent">@color/ns_accent</item>
