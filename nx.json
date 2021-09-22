@@ -14,12 +14,7 @@
     "default": {
       "runner": "@nrwl/nx-cloud",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ],
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
         "accessToken": "ZjhkOWIyYTAtM2IwZi00NmE2LWEzYWUtN2ZjN2IzOTAyZWVjfHJlYWQtd3JpdGU="
       }
     }
@@ -33,17 +28,18 @@
     ]
   },
   "projects": {
+    "dragons-and-coin-game": {
+      "tags": []
+    },
+    "nativescript-dragons-and-coin": {
+      "tags": []
+    },
     "nx-conf-demo": {
       "tags": []
     },
     "nx-conf-demo-e2e": {
       "tags": [],
-      "implicitDependencies": [
-        "nx-conf-demo"
-      ]
-    },
-    "nativescript-dragons-and-coin": {
-      "tags": []
+      "implicitDependencies": ["nx-conf-demo"]
     }
   }
 }

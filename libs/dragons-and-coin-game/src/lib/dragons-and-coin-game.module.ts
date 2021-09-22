@@ -8,7 +8,6 @@ import { NativeScriptCommonModule,
 import {ActionsComponent} from './components/actions/actions.component'
 import { AudioModule } from './audio/audio.module';
 
-
 @NgModule({
   declarations: [GameBoardComponent, CardComponent, ActionsComponent],
   exports: [GameBoardComponent],
