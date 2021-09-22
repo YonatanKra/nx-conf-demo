@@ -6,6 +6,7 @@ import { NativeScriptCommonModule,
   NativeScriptFormsModule,
   NativeScriptRouterModule, } from '@nativescript/angular';
 import {ActionsComponent} from './components/actions/actions.component'
+import { AudioModule } from './audio/audio.module';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import {ActionsComponent} from './components/actions/actions.component'
     NativeScriptCommonModule,
     NativeScriptFormsModule,
     NativeScriptRouterModule,
+    AudioModule
   ],
   schemas: [NO_ERRORS_SCHEMA]
 })

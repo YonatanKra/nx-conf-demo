@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { gameState } from '../../store/state';
 import { GameState } from '../../models/state.model';
 import { generatePlayCards } from '../../content';
+import { AudioService } from '../../audio/audio.service';
 
 function isCardActive(currentCard) {
   return currentCard && currentCard.cardState === "ACTIVE";
@@ -14,6 +15,9 @@ function isCardActive(currentCard) {
 })
 export class GameBoardComponent implements OnInit{
   gameState: GameState = gameState;
+
+  constructor(private audioService: AudioService) {
+  }
 
   get endGame(): boolean {
     return this.gameState.character.hitPoints <= 0;
@@ -35,7 +39,8 @@ export class GameBoardComponent implements OnInit{
     gameState.commitAction('SET_NEW_DECK', {deck: generatePlayCards()});
   }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
+    await this.audioService.play('~/assets/audio/battle-of-the-dragons-8037.mp3');
     this.refillDeck();
     gameState.commitAction('NEXT_CARD');
 
