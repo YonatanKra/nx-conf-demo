@@ -14,7 +14,7 @@ export class AudioService {
   async play(filePath: string) {
     return this.player.playFromFile({
       audioFile: filePath,
-      loop: false
+      loop: true
     })
   }
 }
