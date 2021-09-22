@@ -7,6 +7,7 @@ import { NativeScriptCommonModule,
   NativeScriptRouterModule, } from '@nativescript/angular';
 import {ActionsComponent} from './components/actions/actions.component'
 import { AudioModule } from './audio/audio.module';
+import { NativeScriptMaterialButtonModule } from '@nativescript-community/ui-material-button/angular';
 
 @NgModule({
   declarations: [GameBoardComponent, CardComponent, ActionsComponent],
@@ -16,7 +17,8 @@ import { AudioModule } from './audio/audio.module';
     NativeScriptCommonModule,
     NativeScriptFormsModule,
     NativeScriptRouterModule,
-    AudioModule
+    AudioModule,
+    NativeScriptMaterialButtonModule
   ],
   schemas: [NO_ERRORS_SCHEMA]
 })

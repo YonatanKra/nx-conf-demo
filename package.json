@@ -18,6 +18,7 @@
     "@angular/platform-browser": "^12.0.0",
     "@angular/platform-browser-dynamic": "^12.0.0",
     "@angular/router": "^12.0.0",
+    "@nativescript-community/ui-material-button": "^6.0.5",
     "@nativescript/angular": "^12.0.0",
     "@nativescript/core": "~8.0.0",
     "@nativescript/theme": "^3.0.1",
