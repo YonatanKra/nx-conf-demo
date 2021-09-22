@@ -13,4 +13,5 @@ export default {
     discardUncaughtJsExceptions: false
   },
 	appPath: 'src',
+  webpackConfigPath: './webpack.config.js'
 } as NativeScriptConfig;

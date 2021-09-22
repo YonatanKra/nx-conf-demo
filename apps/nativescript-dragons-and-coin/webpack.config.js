@@ -4,5 +4,10 @@ module.exports = (env) => {
 	webpack.init(env);
 	webpack.useConfig('angular');
 
-	return webpack.resolveConfig();
+  webpack.Utils.addCopyRule({
+    from: '../../libs/dragons-and-coin-game/src/assets',
+    to: 'assets',
+  });
+
+  return webpack.resolveConfig();
 };
