@@ -44,6 +44,7 @@ export class GameBoardComponent implements OnInit{
     this.gameState.commitAction('RESTART');
     this.gameState.commitAction('NEXT_CARD');
   }
+
   async ngOnInit(): Promise<void> {
     await this.audioService.play('~/assets/audio/battle-of-the-dragons-8037.mp3');
     this.refillDeck();
