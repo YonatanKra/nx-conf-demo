@@ -8,6 +8,7 @@ import { NativeScriptRouterModule } from '@nativescript/angular';
 
 import { SharedModule } from '../shared/shared.module';
 import { HOME_COMPONENTS, HomeComponent } from './components';
+import { NativescriptAudioModule } from '@yonatan/nativescript-audio';
 
 export const routes: Routes = [
   {
@@ -17,7 +18,7 @@ export const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [SharedModule, NativeScriptRouterModule.forChild(routes)],
+  imports: [SharedModule, NativeScriptRouterModule.forChild(routes), NativescriptAudioModule],
   declarations: [...HOME_COMPONENTS],
   exports: [...HOME_COMPONENTS],
   schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA]

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { gameState } from '../../store/state';
 import { GameState } from '../../models/state.model';
 import { generatePlayCards } from '../../content';
-import { AudioService } from '../../audio/audio.service';
+import { AudioService } from '@yonatan/nativescript-audio';
 
 function isCardActive(currentCard) {
   return currentCard && currentCard.cardState === "ACTIVE";
@@ -46,7 +46,7 @@ export class GameBoardComponent implements OnInit{
   }
 
   async ngOnInit(): Promise<void> {
-    await this.audioService.play('~/assets/audio/battle-of-the-dragons-8037.mp3');
+    await this.audioService.play('~/assets/audio/dark-secrets-of-the-universe-5745.mp3');
     this.refillDeck();
     this.gameState.commitAction('NEXT_CARD');
 

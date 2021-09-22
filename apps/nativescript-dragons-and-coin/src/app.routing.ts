@@ -16,12 +16,17 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: () => 
+    loadChildren: () =>
       import('./features/home/home.module').then(m => m.HomeModule)
+  },
+  {
+    path: 'game',
+    loadChildren: () => import('./features/game/game.module').then(m => m.GameModule)
   }
 ];
 
 @NgModule({
   imports: [SharedModule, NativeScriptRouterModule.forRoot(routes)]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+}

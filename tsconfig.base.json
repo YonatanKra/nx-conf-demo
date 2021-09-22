@@ -17,7 +17,8 @@
     "paths": {
       "@yonatan/dragons-and-coin-game": [
         "libs/dragons-and-coin-game/src/index.ts"
-      ]
+      ],
+      "@yonatan/nativescript-audio": ["libs/nativescript-audio/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

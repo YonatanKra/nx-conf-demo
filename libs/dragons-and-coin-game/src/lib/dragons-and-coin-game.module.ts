@@ -6,8 +6,7 @@ import { NativeScriptCommonModule,
   NativeScriptFormsModule,
   NativeScriptRouterModule, } from '@nativescript/angular';
 import {ActionsComponent} from './components/actions/actions.component'
-import { AudioModule } from './audio/audio.module';
-
+import { NativescriptAudioModule } from '@yonatan/nativescript-audio';
 @NgModule({
   declarations: [GameBoardComponent, CardComponent, ActionsComponent],
   exports: [GameBoardComponent],
@@ -16,7 +15,7 @@ import { AudioModule } from './audio/audio.module';
     NativeScriptCommonModule,
     NativeScriptFormsModule,
     NativeScriptRouterModule,
-    AudioModule
+    NativescriptAudioModule
   ],
   schemas: [NO_ERRORS_SCHEMA]
 })

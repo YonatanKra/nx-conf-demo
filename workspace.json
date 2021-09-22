@@ -26,6 +26,31 @@
         }
       }
     },
+    "nativescript-audio": {
+      "projectType": "library",
+      "root": "libs/nativescript-audio",
+      "sourceRoot": "libs/nativescript-audio/src",
+      "prefix": "yonatan",
+      "targets": {
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/nativescript-audio"],
+          "options": {
+            "jestConfig": "libs/nativescript-audio/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/nativescript-audio/src/**/*.ts",
+              "libs/nativescript-audio/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "nativescript-dragons-and-coin": {
       "projectType": "application",
       "root": "apps/nativescript-dragons-and-coin/",
