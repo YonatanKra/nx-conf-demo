@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AudioService } from '@yonatan/nativescript-audio';
 import { FullScreenService } from '../../shared/services/full-screen.service';
+import { Page } from '@nativescript/core';
 
 @Component({
   moduleId: module.id,
@@ -9,11 +10,11 @@ import { FullScreenService } from '../../shared/services/full-screen.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit{
-  constructor(private audioService: AudioService, private fullScreenService: FullScreenService) {
+  constructor(private audioService: AudioService, private page: Page) {
   }
 
   async ngOnInit(): Promise<void> {
     await this.audioService.play('~/assets/audio/battle-of-the-dragons-8037.mp3');
-    this.fullScreenService.goFullscreen();
+    this.page.actionBarHidden = true;
   }
 }

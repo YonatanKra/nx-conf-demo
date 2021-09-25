@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FullScreenService } from '../../../shared/services/full-screen.service';
+import { AudioService } from '@yonatan/nativescript-audio';
+import { Page } from '@nativescript/core';
 
 @Component({
   selector: 'game',
@@ -7,11 +9,11 @@ import { FullScreenService } from '../../../shared/services/full-screen.service'
   styleUrls: ['./game.component.css']
 })
 export class GameComponent implements OnInit{
-  constructor(private fullScreenService: FullScreenService) {
+  constructor(private fullScreenService: FullScreenService, private page: Page) {
 
   }
 
   ngOnInit(): void {
-    this.fullScreenService.goFullscreen();
+    this.page.actionBarHidden = true;
   }
 }
