@@ -3,7 +3,9 @@
   "files": [],
   "include": [],
   "compilerOptions": {
-    "lib": ["es2019", "dom"]
+    "lib": ["es2019", "dom"],
+    "resolveJsonModule": true,
+    "esModuleInterop": true
   },
   "references": [
     {

@@ -1,0 +1,9 @@
+<GridLayout class='home-layout'>
+  <StackLayout verticalAlignment="center">
+  <Button *ngFor='let menuItem of menuItems'
+          [text]='menuItem.name'
+          [nsRouterLink]="[menuItem.route]"
+          clearHistory="true"
+          ></Button>
+  </StackLayout>
+</GridLayout>
