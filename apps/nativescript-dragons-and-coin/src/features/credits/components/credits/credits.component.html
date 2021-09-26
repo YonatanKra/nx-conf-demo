@@ -1,4 +1,4 @@
-<StackLayout>
+<StackLayout (tap)='backHome()'>
   <Label class='credits-header' text='Music'></Label>
   <WrapLayout *ngFor='let credit of credits.Music;'>
     <Label class="credit-item h2 font-weight-bold" [text]='credit.name' width='100%'></Label>
