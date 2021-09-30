@@ -3,9 +3,10 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './features/shared/shared.module';
 import { AppRoutingModule } from './app.routing';
 import { AppComponent } from './app.component';
+import { NativeScriptAnimationsModule } from '@nativescript/angular';
 
 @NgModule({
-  imports: [CoreModule, SharedModule, AppRoutingModule],
+  imports: [CoreModule, SharedModule, AppRoutingModule, NativeScriptAnimationsModule],
   declarations: [AppComponent],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA]

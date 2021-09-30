@@ -7,7 +7,9 @@
     "postinstall": "node ./tools/postinstall.js"
   },
   "dependencies": {
-    "@nativescript/core": "*"
+    "@nativescript/core": "*",
+    "@nativescript-community/ui-material-button": "*",
+    "@nativescript-community/ui-material-cardview": "*"
   },
   "devDependencies": {
     "@nativescript/android": "8.0.0",

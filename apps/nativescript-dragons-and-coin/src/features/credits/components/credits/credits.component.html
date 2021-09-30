@@ -1,6 +1,6 @@
-<StackLayout (tap)='backHome()'>
+<StackLayout (tap)='backHome()' [@list]='credits.Music.length' (@list.done)='onAnimationDone($event)'>
   <Label class='credits-header' text='Music'></Label>
-  <WrapLayout *ngFor='let credit of credits.Music;'>
+  <WrapLayout *ngFor='let credit of credits.Music;' class='credits-row'>
     <Label class="credit-item h2 font-weight-bold" [text]='credit.name' width='100%'></Label>
     <Label class="credit-line h1 c-white" [text]='credit.credits' width='100%'></Label>
   </WrapLayout>

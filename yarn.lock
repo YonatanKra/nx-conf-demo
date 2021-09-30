@@ -1722,6 +1722,33 @@
     merge-source-map "^1.1.0"
     schema-utils "^2.7.0"
 
+"@nativescript-community/text@^1.3.10":
+  version "1.4.22"
+  resolved "https://registry.yarnpkg.com/@nativescript-community/text/-/text-1.4.22.tgz#272f90fbe747b274285debfac01588b9a6e039e4"
+  integrity sha512-Qy6XhyAv/veHTKHgB3xvwsBQO0zS+X6ezA3f3hogwQzPYxBUI1pr/kY+Raf3M132ejpnZ2AkoxmnvjIAkc+uQg==
+
+"@nativescript-community/ui-material-button@^6.0.6":
+  version "6.0.6"
+  resolved "https://registry.yarnpkg.com/@nativescript-community/ui-material-button/-/ui-material-button-6.0.6.tgz#fbbb4780685763e39bc48b342ded46d2d66ea58c"
+  integrity sha512-CnWRBah5/nboZ5IGctxOFNBwrVk8zDFgOqn6eXrfh4V7pmv8WEBFe7Gk2pTdE3QXTc24NWN6lKNcGbTQKyt+BQ==
+  dependencies:
+    "@nativescript-community/text" "^1.3.10"
+    "@nativescript-community/ui-material-core" "^6.0.6"
+
+"@nativescript-community/ui-material-cardview@^6.0.6":
+  version "6.0.6"
+  resolved "https://registry.yarnpkg.com/@nativescript-community/ui-material-cardview/-/ui-material-cardview-6.0.6.tgz#4911c94e08750d3ed08889f65d51f4aa3133fd46"
+  integrity sha512-X1XkansV51XywgEof10L/TQewtDMYJ9fNXl1V5EaBIA2ENgJmYV5WWFT4sL46MTSSQ5NC/0zshTc4OJJBrY2Cw==
+  dependencies:
+    "@nativescript-community/ui-material-core" "^6.0.6"
+
+"@nativescript-community/ui-material-core@^6.0.6":
+  version "6.0.6"
+  resolved "https://registry.yarnpkg.com/@nativescript-community/ui-material-core/-/ui-material-core-6.0.6.tgz#27131cc57c81df60a5628a04cabe3fffc4d42d86"
+  integrity sha512-uEgmAcoFyo2b/xFcV9StcsIY894lMF3qKGid8sVqDcuiTssfCndku8rLDd5BaOBJYkks+005TjgLFZK1rwM0TA==
+  dependencies:
+    "@nativescript/hook" "~2.0.0"
+
 "@nativescript/angular@^12.0.0":
   version "12.2.0"
   resolved "https://registry.yarnpkg.com/@nativescript/angular/-/angular-12.2.0.tgz#2c973c13058552ee07d1b577614b1abbc3b0bc10"
@@ -2170,11 +2197,6 @@
     tslib "^2.0.0"
     yargs "15.4.1"
     yargs-parser "20.0.0"
-
-"@nstudio/nativescript-cardview@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@nstudio/nativescript-cardview/-/nativescript-cardview-2.0.1.tgz#9d40d3173efb2cb6d58d06a940a77d4ef7a4c1f6"
-  integrity sha512-c9FUYlvsUt6Z9xz8ESGTAjmHdNDO+RQp4KWSbu46fnXUuuSTJvjTdR6uOaIQmxQw8vb0HrHEri5p0bIK1nBxFQ==
 
 "@phenomnomnominal/tsquery@4.1.1":
   version "4.1.1"
